@@ -11,8 +11,13 @@
 /build
 
 # Ignore cache
+/.assets-cache
 /.sass-cache
 /.cache
 
 # Ignore .DS_store file
 .DS_Store
+
+# Ignore Node files
+node_modules
+typings

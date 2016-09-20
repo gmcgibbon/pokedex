@@ -1,0 +1,40 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "A simple Pokédex static app featuring Middleman",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec middleman server",
+    "build": "bundle exec middleman build",
+    "postinstall": "typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmcgibbon/pokedex.git"
+  },
+  "author": "Gannon McGibbon",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.23"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.8.1",
+    "typescript": "^2.0.2",
+    "typings": "^1.3.2",
+    "webpack": "^1.13.0"
+  },
+  "bugs": {
+    "url": "https://github.com/gmcgibbon/pokedex/issues"
+  },
+  "homepage": "https://github.com/gmcgibbon/pokedex"
+}

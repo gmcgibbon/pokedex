@@ -20,7 +20,12 @@ page '/*.txt', layout: false
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+  activate :livereload, host: 'localhost'
+  activate :external_pipeline,
+    name:    :webpack,
+    command: './node_modules/webpack/bin/webpack.js --watch',
+    source:  '.assets-cache',
+    latency: 1
 end
 
 ###
@@ -36,6 +41,11 @@ end
 
 # Build-specific configuration
 configure :build do
+  activate :external_pipeline,
+    name:    :webpack,
+    command: './node_modules/webpack/bin/webpack.js --bail',
+    source:  '.assets-cache',
+    latency: 1
   # Minify CSS on build
   # activate :minify_css
 

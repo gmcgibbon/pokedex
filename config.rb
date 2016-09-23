@@ -8,6 +8,7 @@
 page '/*.xml',  layout: false
 page '/*.json', layout: false
 page '/*.txt',  layout: false
+page '/templates/*.html', layout: false
 
 # Ignore files on build
 ignore '*.ts'

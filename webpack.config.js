@@ -5,6 +5,10 @@ module.exports = {
     application: './source/javascripts/application.ts'
   },
 
+  resolve: {
+    extensions: ['', '.ts', '.js', '.json']
+  },
+
   output: {
     path:     './.assets-cache',
     filename: 'javascripts/[name].js'

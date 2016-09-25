@@ -1,5 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { PokedexModule }          from './pokedex/module.ts';
+import { PokedexModule }          from './pokedex/module';
 
 const platform = platformBrowserDynamic();
 

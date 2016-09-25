@@ -1,6 +1,6 @@
 import { NgModule }         from '@angular/core';
 import { BrowserModule }    from '@angular/platform-browser';
-import { PokedexComponent } from './component.ts';
+import { PokedexComponent } from './component';
 
 @NgModule({
   imports:      [BrowserModule],

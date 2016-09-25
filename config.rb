@@ -24,6 +24,7 @@ ignore '*.ts'
 
 # Reload the browser automatically whenever files change
 configure :development do
+  activate :dotenv, env: '.env.development'
   activate :livereload, host: 'localhost'
   activate :external_pipeline,
     name:    :webpack,
@@ -45,6 +46,7 @@ end
 
 # Build-specific configuration
 configure :build do
+  activate :dotenv, env: '.env.build'
   activate :external_pipeline,
     name:    :webpack,
     command: './node_modules/webpack/bin/webpack.js --bail',

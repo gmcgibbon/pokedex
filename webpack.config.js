@@ -1,8 +1,23 @@
+var webpack = require('webpack');
+
 module.exports = {
+
+  plugins: [
+    new webpack.EnvironmentPlugin([
+      'NODE_ENV'
+    ])
+  ],
+
   entry: {
-    polyfill:    './source/javascripts/polyfill.ts',
-    vendor:      './source/javascripts/vendor.ts',
-    application: './source/javascripts/application.ts'
+    application: [
+      './source/javascripts/polyfill.ts',
+      './source/javascripts/vendor.ts',
+      './source/javascripts/main.ts'
+    ]
+  },
+
+  resolve: {
+    extensions: ['', '.ts', '.js', '.json']
   },
 
   output: {

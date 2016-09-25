@@ -21,3 +21,7 @@
 # Ignore Node files
 node_modules
 typings
+
+# Ignore .env files
+.env.development
+.env.build

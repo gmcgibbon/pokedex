@@ -1,9 +1,10 @@
 import { NgModule }         from '@angular/core';
 import { BrowserModule }    from '@angular/platform-browser';
-import { PokedexComponent } from './component';
+import { PokemonModule }    from '../pokemon/module';
+import { PokedexComponent } from './components/main';
 
 @NgModule({
-  imports:      [BrowserModule],
+  imports:      [BrowserModule, PokemonModule],
   declarations: [PokedexComponent],
   bootstrap:    [PokedexComponent]
 })

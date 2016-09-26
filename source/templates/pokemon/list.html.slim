@@ -1,3 +1,5 @@
 ul
   <li *ngFor="let pokemon of pokemons" (click)="show(pokemon)">
-    h3() {{ pokemon.id | fixed:3 }} {{ pokemon.name | capitalize }}  
+    h3() {{ pokemon.id | fixed:3 }} {{ pokemon.name | capitalize }}
+
+<button (click)="more()" [hidden]="pokedex.loading"> &darr;

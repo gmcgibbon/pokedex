@@ -1,6 +1,6 @@
 import { Component }      from '@angular/core';
 import { OnInit }         from '@angular/core';
-import { PokemonService } from '../../pokemon/service';
+import { PokedexService } from '../service';
 import { Pokemon }        from '../../pokemon/models/pokemon';
 
 @Component({
@@ -13,16 +13,18 @@ export class PokedexPokemonList implements OnInit {
   pokemons:   Pokemon[] = [];
   startFrom:  number    = 1;
   startCount: number    = 15;
-  loading:    boolean   = true;
 
-  constructor(private pokemon : PokemonService) { }
+  constructor(private pokedex : PokedexService) { }
 
   ngOnInit(): void {
-    this.pokemon.getEach(this.startFrom, this.startCount).subscribe(
+    this.pokedex.pokemon.getEach(this.startFrom, this.startCount).subscribe(
       pokemon => { this.pokemons.push(pokemon); },
       error   => { console.log(error); },
-      ()      => { this.loading = false; }
+      ()      => { this.pokedex.loading = false; }
     );
   }
 
+  show(pokemon : Pokemon) : void {
+    this.pokedex.onSelected.emit(pokemon);
+  }
 }

@@ -1,2 +1,11 @@
-h2() ID: {{ pokemon.id | fixed:3 }}
-h2() Name: {{ pokemon.name | capitalize }}
+h2() {{ pokemon.id | fixed:3 }} {{ pokemon.name | capitalize }}
+
+img src='{{ pokemon.sprites.front_default }}'
+
+h4 Types:
+ul
+  <li *ngFor="let slotType of pokemon.types">
+    | {{ slotType.type.name | capitalize }}
+
+h4 Height: {{ pokemon.height }}
+h4 Weight: {{ pokemon.weight }}

@@ -19,7 +19,7 @@ export class PokedexPokemonList implements OnInit {
 
   ngOnInit(): void {
     this.pokemon.getEach(this.startFrom, this.startCount).subscribe(
-      pokemon => { console.log(pokemon); this.pokemons.push(pokemon); },
+      pokemon => { this.pokemons.push(pokemon); },
       error   => { console.log(error); },
       ()      => { this.loading = false; }
     );

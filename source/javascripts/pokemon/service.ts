@@ -10,11 +10,18 @@ export class PokemonService {
 
   private url = `${process.env.API_URL}/pokemon/{id}`;
 
-  get(id: number | string): Observable<Pokemon> {
+  get(id: number): Observable<Pokemon> {
     return this.http
       .get(this.url.replace('{id}', id.toString()))
       .map(this.map)
       .catch(this.catch);
+  }
+
+  getEach(idStart: number, idCount : number): Observable<Pokemon> {
+    return Observable.range(idStart, idCount)
+      .map((id) => this.get(id))
+      .catch(this.catch)
+      .concatAll();
   }
 
   private map(response: Response) {

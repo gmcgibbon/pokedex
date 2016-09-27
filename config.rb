@@ -53,8 +53,8 @@ configure :build do
     source:  '.assets-cache',
     latency: 1
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 end

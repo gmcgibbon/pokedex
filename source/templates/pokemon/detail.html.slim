@@ -1,4 +1,4 @@
-md-card
+<md-card *ngIf="pokemon.id">
   md-card-subtitle() {{ pokemon.id | fixed:3 }}
   md-card-title() {{ pokemon.name | capitalize }}
   md-card-content

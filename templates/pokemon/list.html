@@ -1,0 +1,1 @@
+<md-list><md-list-item *ngFor="let pokemon of pokemons" (click)="show(pokemon)"><h3 md-line="">{{ pokemon.name | capitalize }}</h3><p md-line="">{{ pokemon.id | fixed:3 }}</p></md-list-item></md-list><button md-fab (click)="more()" [disabled]="pokedex.loading">&darr;

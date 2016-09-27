@@ -21,6 +21,12 @@ pokedex {
       height: 100%;
       width: 100%;
       overflow-y: auto;
+      padding: 5px;
+
+      button {
+        margin: 0px auto;
+        display: block;
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "pokedex",
   "version": "1.0.0",
-  "description": "A simple Pokédex static app featuring Middleman",
+  "description": "A simple Pokédex static app featuring Middleman, Angular2, and Webpack!",
   "main": "index.js",
   "scripts": {
     "start": "bundle exec middleman server",

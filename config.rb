@@ -24,7 +24,7 @@ ignore '*.ts'
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :dotenv, env: '.env.development'
+  activate :dotenv, env: '.env.development' unless building?
   activate :livereload, host: 'localhost'
   activate :external_pipeline,
     name:    :webpack,
@@ -53,8 +53,15 @@ configure :build do
     source:  '.assets-cache',
     latency: 1
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
+
+  # Use relative asset paths
+  activate :relative_assets
 end
+
+# HACK: It seems development is configured on build,
+# this will fix dotenv incorrectly loading dev vars
+def building?; ARGV.first.to_s.start_with?('b'); end
